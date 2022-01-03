@@ -10,7 +10,7 @@ const Modal = ({ setIsOpen, successCallback, displayModalImage}) => {
           <div className="centered">
         <div className="modal">
           <div className="modalHeader">
-            <h5 className="heading">Dialog</h5>
+            <h5 className="heading">Warning, content: Are you sure to delete this image?</h5>
           </div>
           <button className="closeBtn" onClick={() => setIsOpen(false)}>
             <RiCloseLine style={{ marginBottom: "-3px" }} />
