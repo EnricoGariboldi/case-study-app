@@ -2,10 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import PhotoApp from './PhotoApp';
+import Home from './Home'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <PhotoApp />
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+        <Route path="PhotoApp" element={<PhotoApp />} />
+    </Routes>
+  </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
