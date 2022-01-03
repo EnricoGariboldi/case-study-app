@@ -1,0 +1,26 @@
+.ApprovedImagesSection-container{
+    margin-bottom : 25px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+.slick-slider{
+  width: 75%;
+  margin:auto;
+}
+
+.ApprovedImagesSection-slider-element{
+    margin-right: 2%;
+}
+
+  .slick-track{ 
+    float:left; 
+  }
+
+  .ApprovedImagesSection-arrows{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

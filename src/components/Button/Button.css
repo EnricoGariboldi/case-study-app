@@ -1,0 +1,18 @@
+.Button-container{
+    border-radius: 5px;
+    height: 30px;
+    cursor: pointer;
+    padding: 5px;
+    margin: 5%;
+    color: white;
+    text-align: center;
+    min-width: 100px;
+}
+
+.Button-primary{
+    background-color: blue;
+}
+
+.Button-secondary{
+    background-color: black;
+}

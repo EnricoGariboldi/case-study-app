@@ -1,0 +1,25 @@
+.CheckedImage-container {
+  width: 60px;
+  height: 45px;
+  border-radius: 6px;
+  margin-right: inherit;
+  
+}
+
+.CheckedImage-disabled {
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float:left;
+  margin-left: 6.5%;
+  margin-right: auto;
+}
+
+img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
