@@ -13,7 +13,7 @@ const ApprovedImagesSection = ({
   currentSlide,
   handleChangeNumSlide,
 }) => {
-  var settings = {
+  const settings = {
     infinite: false,
     speed: 300,
     centerMode: false,
@@ -31,7 +31,7 @@ const ApprovedImagesSection = ({
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 5.5,
+          slidesToShow: 6,
           slidesToScroll: 1,
         },
       },
@@ -43,6 +43,13 @@ const ApprovedImagesSection = ({
         },
       },
       {
+        breakpoint: 320,
+        settings: {
+          slidesToShow: 2.5,
+          slidesToScroll: 1,
+        },
+      },
+      {
         breakpoint: 480,
         settings: {
           slidesToShow: 3.5,
@@ -50,15 +57,16 @@ const ApprovedImagesSection = ({
         },
       },
       {
-        breakpoint: 320,
+        breakpoint: 0,
         settings: {
-          slidesToShow: 2.5,
+          slidesToShow: 1.5,
           slidesToScroll: 1,
         },
-      },
+      }
     ],
   };
   let slider = React.useRef(null);
+
 
   const gotoNext = () => {
     slider.current.slickNext();
@@ -74,7 +82,7 @@ const ApprovedImagesSection = ({
   };
 
   const showLeftArrow = () => {
-    if (currentSlide <= 0) {
+    if (currentSlide <= 1) {
       return "";
     } else {
       return (
@@ -87,10 +95,15 @@ const ApprovedImagesSection = ({
       );
     }
   };
-  
+
+  const isOdd = (num) => { return num % 2 === 1 }
+
   const showRightArrow = () => {
-    const slidesToShow = 3.5;
-    if (currentSlide > (imageList.length-slidesToShow)-1) {
+    const responsiveSetting = settings.responsive.filter(el => el.breakpoint <= window.innerWidth)
+    const resolveSettingBreakpoint = responsiveSetting.sort((a,b) => b.breakpoint-a.breakpoint)
+    const slidesSetting = resolveSettingBreakpoint[0].settings.slidesToShow;
+    const slidesToShow = !isOdd(imageList.length) ? slidesSetting : Math.round(slidesSetting);
+    if (currentSlide > imageList.length-slidesToShow) {
       return "";
     } else {
       return (
@@ -102,6 +115,8 @@ const ApprovedImagesSection = ({
         </div>
       );
     }
+
+    
   };
 
   return (
@@ -123,7 +138,7 @@ const ApprovedImagesSection = ({
       )}
       {showRightArrow()}
     </div>
-  );
+  )
 };
 
 export default ApprovedImagesSection;

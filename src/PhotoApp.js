@@ -5,6 +5,7 @@ import ApprovedImagesSection from "./components/ApprovedImagesSection/ApprovedIm
 import fetchPhotoRequest from "./services/fetchPhotoRequest";
 import { useState } from "react";
 import Modal from "./components/Modal/Modal";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const mockImageList = [
   "https://images.unsplash.com/photo-1637680882990-f425ed78da0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyODUwMjd8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NDAyNDgzODI&ixlib=rb-1.2.1&q=80&w=1080",
@@ -44,7 +45,6 @@ const PhotoApp = () => {
   const handleImageDeleter = () => {
     const imageListUpdated = mockImageList.splice(modalIndex, 1);
     setImageList(imageListUpdated);
-    setNumSlide(numSlide - 1);
   };
 
   const viewModalImage = () => {
@@ -55,8 +55,19 @@ const PhotoApp = () => {
     );
   };
 
+  const location = useLocation();
+  let navigate = useNavigate();
+
+  const logout = () => {
+    navigate('/');
+  }
+
   return (
     <div className="PhotoApp">
+
+      <div><h1>Ciao, {location.state}</h1></div>
+
+
       <ApprovedImagesSection
         imageList={mockImageList}
         handleClickImageDeleter={(index, imageUrl) => {
@@ -88,7 +99,9 @@ const PhotoApp = () => {
           displayModalImage={() => viewModalImage()}
         />
       )}
+      <div className="Photoapp-logout Button" onClick={logout} >Logout</div>
     </div>
+    
   );
 };
 export default PhotoApp;
