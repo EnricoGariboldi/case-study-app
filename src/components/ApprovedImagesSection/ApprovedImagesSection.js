@@ -24,42 +24,56 @@ const ApprovedImagesSection = ({
       {
         breakpoint: 1200,
         settings: {
-          slidesToShow: 6.5,
+          slidesToShow: 7.5,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1920,
+        settings: {
+          slidesToShow: 9.5,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 6,
+          slidesToShow: 6.5,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 4.5,
+          slidesToShow: 5.5,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 320,
+        breakpoint: 370,
         settings: {
           slidesToShow: 2.5,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 580,
         settings: {
           slidesToShow: 3.5,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 0,
+        breakpoint: 250,
         settings: {
           slidesToShow: 1.5,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 150,
+        settings: {
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       }
@@ -103,7 +117,7 @@ const ApprovedImagesSection = ({
     const resolveSettingBreakpoint = responsiveSetting.sort((a,b) => b.breakpoint-a.breakpoint)
     const slidesSetting = resolveSettingBreakpoint[0].settings.slidesToShow;
     const slidesToShow = !isOdd(imageList.length) ? slidesSetting : Math.round(slidesSetting);
-    if (currentSlide > imageList.length-slidesToShow) {
+    if (currentSlide > (imageList.length-slidesToShow)-1 ) {
       return "";
     } else {
       return (
