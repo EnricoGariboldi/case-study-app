@@ -52,7 +52,7 @@ const ApprovedImagesSection = ({
       {
         breakpoint: 370,
         settings: {
-          slidesToShow: 2.5,
+          slidesToShow: 3.5,
           slidesToScroll: 1,
         },
       },
@@ -80,8 +80,7 @@ const ApprovedImagesSection = ({
     ],
   };
   let slider = React.useRef(null);
-
-
+  
   const gotoNext = () => {
     slider.current.slickNext();
     const add = +1;
@@ -96,7 +95,7 @@ const ApprovedImagesSection = ({
   };
 
   const showLeftArrow = () => {
-    if (currentSlide <= 1) {
+    if (currentSlide < 1) {
       return "";
     } else {
       return (
@@ -117,7 +116,7 @@ const ApprovedImagesSection = ({
     const resolveSettingBreakpoint = responsiveSetting.sort((a,b) => b.breakpoint-a.breakpoint)
     const slidesSetting = resolveSettingBreakpoint[0].settings.slidesToShow;
     const slidesToShow = !isOdd(imageList.length) ? slidesSetting : Math.round(slidesSetting);
-    if (currentSlide > (imageList.length-slidesToShow)-1 ) {
+    if (currentSlide > (imageList.length-slidesToShow) ) {
       return "";
     } else {
       return (

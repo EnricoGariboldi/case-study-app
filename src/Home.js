@@ -1,6 +1,11 @@
 import "./Home.css";
 import {useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
+import DoneIcon from '@mui/icons-material/Done';
+import Button from '@mui/material/Button';
+import { Stack } from "@mui/material";
+import TextField from '@mui/material/TextField';
+import ReactDOM from 'react-dom';
 
 const Home = () => {
 
@@ -21,25 +26,33 @@ const confirmInput = () => {
         setNickname(nick);
 
     } else {
-        document.getElementById("HomeForm-1").innerHTML = "<label id='Home-Label' style='font-weight:bold; color: white; background-color: red;'>*Nickname Required</label>"
-        document.getElementById("HomeForm-2").innerHTML = "<input type='text' style='border-color: red; border-width: 5px; width: 60%; height: 4em; font-size: 1.5em; text-align: center;' id='fname' name='fname' placeholder='insert Nickname'></input>"
+        ReactDOM.render( 
+            <Stack direction="row"  justifyContent="center" className="Home-label">
+            <TextField error id="fname" label="*Nickname Required" defaultValue="" variant="filled" autoComplete="off" />
+            </Stack>
+            ,document.getElementById("HomeForm")
+        )
     }
 }
 
   return (
 
     <div className="Home">
-        
-    <div className="Home-title"><h1>Home</h1></div>
-        <div className="Home-form" id="HomeForm">
-           <div id="HomeForm-1"><label className="Home-label">Nickname</label></div>
-           <div id="HomeForm-2"><input type="text" className="Home-input" id="fname" name="fname" placeholder="insert Nickname"></input></div>
-        </div>
-            {isNickConf? (<div className="Home-button-container Button-primary" onClick={redirect} >
-        Go to Photoboot</div> ) : (<div className="Home-button-container Button-primary" onClick={confirmInput} >
-           Confirm Nickname </div>) }
-    </div>
+    
+    <div className="Home-title">Login</div>
 
+        <div className="Home-form" id="HomeForm">
+        <Stack direction="row"  justifyContent="center" className="Home-label">
+        <TextField id="fname" label="insert Nickname" variant="filled" autoComplete="off" />
+        </Stack>
+        </div>
+
+           {isNickConf? (<Stack direction="row"  justifyContent="center"><Button sx={{ display: "flex", justifyContent: "center" }} size="large" variant="contained" startIcon={<DoneIcon />} onClick={redirect}>
+         Go to Photoboot
+        </Button></Stack>) : (<Stack direction="row"  justifyContent="center"><Button size="large" variant="contained" endIcon={<DoneIcon />} onClick={confirmInput}>
+        Confirm Nickname
+        </Button></Stack>)}
+        </div>
   );
 };
 export default Home;

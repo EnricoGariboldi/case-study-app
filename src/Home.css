@@ -1,44 +1,35 @@
 
 .Home{
-padding-left: 10%;
-padding-right: 10%;
+padding:10%;
 background-color: #36454f ;
+height: 100vh;
 }
 
 .Home-form{
   text-align: center;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
 }
 
-.Home-button-container {
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 5%;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    width: fit-content;
-    margin:auto;
-    font-size: 120%;
-    font-weight: bold;
-    
-}
 
 .Home-label{
-    font-weight: bold;
+    border-radius: 8px;
+margin-bottom: 10%;
+background-color: white;
+width: fit-content;
+margin-right: auto;
+margin-left: auto;
 }
 
 .Home-title{
     text-align: center;
     font-family: Georgia, serif;
-    font-size: 1em;
+    font-size: 3em;
     text-decoration: underline;
     text-decoration-color: white;
     color: white;
+    margin-bottom: 25%;
 }
 
-.Home-label {
-    color: white;
-}
 
 .Home-input {
     width: 60%;
@@ -51,3 +42,4 @@ background-color: #36454f ;
     font-size: 2em;
     color:gold;
 }
+

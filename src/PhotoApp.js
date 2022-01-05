@@ -43,7 +43,7 @@ const PhotoApp = () => {
     handleFetchPhotoRequest();
   };
   const handleImageDeleter = () => {
-    const imageListUpdated = mockImageList.splice(modalIndex, 1);
+    const imageListUpdated = imageList.splice(modalIndex, 1);
     setImageList(imageListUpdated);
   };
 
@@ -69,7 +69,7 @@ const PhotoApp = () => {
 
 
       <ApprovedImagesSection
-        imageList={mockImageList}
+        imageList={imageList}
         handleClickImageDeleter={(index, imageUrl) => {
           setIsOpen(true);
           setModalIndex(index);
