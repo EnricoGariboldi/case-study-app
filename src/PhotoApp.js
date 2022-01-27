@@ -7,6 +7,7 @@ import { useState } from "react";
 import Modal from "./components/Modal/Modal";
 import { useLocation, useNavigate } from "react-router-dom";
 
+/*
 const mockImageList = [
   "https://images.unsplash.com/photo-1637680882990-f425ed78da0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyODUwMjd8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NDAyNDgzODI&ixlib=rb-1.2.1&q=80&w=1080",
   "https://images.unsplash.com/photo-1638043880953-2f36db6a6cf4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyODUwMjd8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NDAyNDgzODQ&ixlib=rb-1.2.1&q=80&w=1080",
@@ -21,6 +22,7 @@ const mockImageList = [
   "https://images.unsplash.com/photo-1638882745833-8bd6f1b43024?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyODUwMjd8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NDAyNzcwNjM&ixlib=rb-1.2.1&q=80&w=1080",
   "https://images.unsplash.com/photo-1638307430347-20b47681a160?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyODUwMjd8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NDAyNzcwNTg&ixlib=rb-1.2.1&q=80&w=1080",
 ];
+*/
 
 const PhotoApp = () => {
   const [image, setImage] = useState("");
@@ -43,7 +45,8 @@ const PhotoApp = () => {
     handleFetchPhotoRequest();
   };
   const handleImageDeleter = () => {
-    const imageListUpdated = imageList.splice(modalIndex, 1);
+    const imageListUpdated = [...imageList]
+    imageListUpdated.splice(modalIndex, 1);
     setImageList(imageListUpdated);
   };
 
