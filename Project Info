@@ -1,0 +1,9 @@
+this project wants to simulate a login experience with a basic interface
+where you can request random images, and if you like them, you can "approve"
+the image displayed by clickind the appropriate button, or discard it and show
+a new image.
+
+The approved images goes into a little carousel, which you can browse with two arrows.
+Then you can logout and return to the initial window by a logout button.
+
+The application is designed for a mobile experience.
