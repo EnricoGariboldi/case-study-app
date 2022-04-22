@@ -1,45 +1,57 @@
-
-.Home{
-padding:10%;
-background-color: #36454f ;
-height: 100vh;
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.Home-form{
+#root {
+  height: inherit;
+}
+
+.Home {
+  background-color: #36454f;
+  height: inherit;
+}
+
+.Home-form {
   text-align: center;
-  margin-bottom: 10%;
+  margin-bottom: 50px;
 }
 
-
-.Home-label{
-    border-radius: 8px;
-margin-bottom: 10%;
-background-color: white;
-width: fit-content;
-margin-right: auto;
-margin-left: auto;
+.Home-label {
+  border-radius: 8px;
+  background-color: white;
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.Home-title{
-    text-align: center;
-    font-family: Georgia, serif;
-    font-size: 3em;
-    text-decoration: underline;
-    text-decoration-color: white;
-    color: white;
-    margin-bottom: 25%;
+.Home-title {
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: 3em;
+  text-decoration: underline;
+  text-decoration-color: white;
+  color: white;
+  margin-bottom: 50px;
+  padding-top: 50px;
 }
-
 
 .Home-input {
-    width: 60%;
-    height: 4em;
-    font-size: 1.5em;
-    text-align: center;
+  width: 60%;
+  height: 4em;
+  font-size: 1.5em;
+  text-align: center;
 }
 
 .Home-output {
-    font-size: 2em;
-    color:gold;
+  font-size: 2em;
+  color: gold;
 }
 
+.Home-Button {
+  width: fit-content;
+  margin: auto;
+}

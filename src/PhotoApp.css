@@ -31,15 +31,15 @@
   height: 100px;
 }
 
-.Photoapp-logout{
+.Photoapp-logout {
   border-radius: 5px;
   cursor: pointer;
-  padding: 5%;
+  padding: 25px;
   color: rgb(255, 255, 255);
   background-color: red;
   text-align: center;
   width: fit-content;
-  margin:auto;
+  margin: auto;
   font-size: 120%;
   font-weight: bold;
   vertical-align: bottom;
